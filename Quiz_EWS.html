@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="css_EWS.css">
+</head>
+<body>
+  <div class="header">
+  <h2>Suryodaya College Of Engineering and Technology</h2>
+  <h4>Telecommunication Electronics Engineering Student Association</h4>
+  </div>
+  <div class="quiz-container">
+    <h1>Quiz Game</h1>
+    <div id="quiz">
+        <button id="strt">Start</button>
+
+        <div class="question-box-wrapper">
+            <div id="timer">60s</div>
+            <div id="question"></div>
+        </div>
+        <div id="option">
+          <div id="options"></div>
+      </div>
+      <button id="confirmBtn" disabled>Confirm</button>
+      <button id="nextBtn" style="display:none;">Next</button>
+      <div id="description"></div>
+    </div>
+  </div>
+  <script src="js_EWS.js"></script>
+</body>
+</html>

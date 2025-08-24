@@ -1,0 +1,343 @@
+/* Add this new block to your CSS file */
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* This will stack the headings vertically */
+    align-items: center; /* This centers the items horizontally */
+    margin-top: 20px; /* Adjust spacing from the top */
+}
+
+h2, h4 {
+    color: #e0ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    text-align: center; /* This centers the text inside the elements */
+}
+
+h2 {
+    font-size: 2.5em;
+    margin: 10px 0px 10px 0px;
+}
+
+h4 {
+    font-size: 1.5em;
+    margin: 20px 0 50px 0;
+}
+
+
+/* General Body and Background */
+/* Update the question icon styles for the timer */
+#timer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d0d4e;
+    border-radius: 50%;
+    width: 60px; /* Slightly wider for the text */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Adjust font size */
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    z-index: 2;
+}
+
+/* Add a style for when the timer is low */
+#timer.low {
+    color: #e74c3c; /* Red color for low time */
+    border-color: #e74c3c;
+    box-shadow: 0 0 10px 3px rgba(231, 76, 60, 0.8);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at center, #092828 0%, #2f042d 100%); /* Dark neon background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center vertically too */
+    min-height: 100vh; /* Ensure full viewport height */
+    color: #fff; /* Default text color for quiz content */
+}
+
+/* Quiz Container (Main box) */
+.quiz-container {
+    /*margin-top: 50px; /* Reduced margin to center better */
+    margin-bottom: 20px; /* Reduced margin to center better */
+    background: #0d0d4e; /* Dark blue fill for container */
+    padding: 30px; /* Increased padding */
+    border-radius: 20px; /* More rounded corners for the container itself */
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4); /* General container glow */
+    max-width: 700px; /* Slightly wider for design elements */
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.5); /* Subtle border for container */
+}
+
+/* Quiz Title */
+h1 {
+    margin-bottom: 30px; /* More space below title */
+    color: #00ffff; /* Neon cyan for the title */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Glowing effect for title */
+}
+
+/* Question Box (Wrapper for #question and the '?' icon) */
+.question-box-wrapper {
+  min-height: 300px;
+    position: relative;
+    background-color: #0d0d4e; /* Dark blue fill */
+    border-radius: 50px; /* Highly rounded corners */
+    padding: 30px 60px;
+    text-align: center;
+    min-width: 500px; /* Ensure sufficient width */
+    box-shadow:
+        0 0 15px 5px rgba(0, 255, 255, 0.6), /* Inner glow */
+        0 0 30px 10px rgba(0, 255, 255, 0.4), /* Outer glow */
+        0 0 45px 15px rgba(0, 255, 255, 0.2); /* Fainter glow */
+    border: 2px solid rgba(0, 255, 255, 0.8); /* Cyan border */
+    margin-bottom: 30px; /* Space between question and options */
+}
+
+/* Question Icon */
+.question-icon {
+    position: absolute;
+    top: -20px; /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d0d4e; /* Match question box background */
+    border-radius: 50%;
+    width: 50px; /* Larger icon */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* Larger font size for '?' */
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    z-index: 2; /* Ensure it's above the box */
+}
+
+/* Question Text */
+#question {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+    font-size: 24px; /* Larger question text */
+    font-weight: bold;
+    color: #e0ffff; /* Lighter cyan for question text */
+    text-shadow: 0 0 5px #e0ffff; /* Subtle glow for question text */
+    margin-bottom: 0; /* Remove default margin */
+}
+
+/* Options Container */
+#options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 options per row */
+    gap: 25px; /* Increased gap */
+    margin-top: 25px;
+    justify-items: center;
+}
+
+/* Individual Option Box */
+.option {
+    display: flex;
+    height: 60px; /* Taller options */
+    width: 280px; /* Wider options */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px; /* Adjust padding for content */
+    border: none;
+    border-radius: 30px; /* More rounded corners for options */
+    background: #0d0d4e; /* Dark blue inner fill */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    z-index: 1;
+    font-size: 18px; /* Larger font size */
+    text-align: center;
+    color: #e0ffff; /* Lighter cyan for option text */
+    overflow: hidden;
+    /* Remove the old gradient border pseudo-elements as we are using box-shadow for glow */
+    &::before, &::after {
+        content: none; /* Disable old gradient borders */
+    }
+}
+
+/* Individual Option Glow Colors */
+.option:nth-child(1) {
+    border: 2px solid rgba(173, 255, 47, 0.8); /* Green border */
+    box-shadow: 0 0 15px 5px rgba(173, 255, 47, 0.6);
+}
+
+.option:nth-child(2) {
+    border: 2px solid rgba(255, 140, 0, 0.8); /* Orange border */
+    box-shadow: 0 0 15px 5px rgba(255, 140, 0, 0.6);
+}
+
+.option:nth-child(3) {
+    border: 2px solid rgba(138, 43, 226, 0.8); /* Purple border */
+    box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.6);
+}
+
+.option:nth-child(4) {
+    border: 2px solid rgba(255, 20, 147, 0.8); /* Pink border */
+    box-shadow: 0 0 15px 5px rgba(255, 20, 147, 0.6);
+}
+
+/* Hover effects for options */
+.option:hover {
+    background: #1a1a5b; /* Slightly lighter dark blue on hover */
+    transform: scale(1.03); /* Subtle scale on hover */
+    color: #fff; /* Ensure text remains visible */
+}
+
+/* Selected, Correct, Wrong states */
+.option.selected {
+    background: #2a2a7b; /* Darker blue when selected */
+    border-color: #3498db;
+    box-shadow: 0 0 20px 7px rgba(52, 152, 219, 0.8); /* Stronger glow when selected */
+}
+
+.option.correct {
+    background: #0f4021 !important; /* Darker green background */
+    border-color: #27ae60 !important;
+    color: #c8f7c5 !important;
+    box-shadow: 0 0 20px 7px rgba(39, 174, 96, 0.8) !important; /* Green glow */
+}
+
+.option.wrong {
+    background: #400f0f !important; /* Darker red background */
+    border-color: #e74c3c !important;
+    color: #f7c5c5 !important;
+    box-shadow: 0 0 20px 7px rgba(231, 76, 60, 0.8) !important; /* Red glow */
+}
+
+/* Buttons (Confirm, Next) */
+button {
+    padding: 12px 30px; /* Larger padding */
+    margin: 10px; /* Increased margin */
+    border: none;
+    border-radius: 25px; /* More rounded buttons */
+    cursor: pointer;
+    font-size: 18px; /* Larger font size */
+    transition: 0.3s ease;
+    text-transform: uppercase; /* Uppercase text for buttons */
+    letter-spacing: 1px;
+}
+
+#confirmBtn {
+    background: #007bff; /* Blue button */
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); /* Blue glow */
+}
+
+#confirmBtn:disabled {
+    background: #334455; /* Darker disabled state */
+    cursor: not-allowed;
+    box-shadow: none; /* No glow when disabled */
+    color: #888;
+}
+
+#confirmBtn:hover:not(:disabled) {
+    background: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.8);
+}
+
+#nextBtn {
+    background: #28a745; /* Green button */
+    color: white;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.6); /* Green glow */
+}
+
+#nextBtn:hover {
+    background: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.8);
+}
+
+/* Description Box */
+#description {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border-left: 5px solid #27ae60;
+    background: #1a1a5b; /* Dark background for description */
+    border-radius: 10px;
+    animation: fadeIn 0.5s;
+    color: #e0ffff; /* Lighter text color */
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.4); /* Green glow */
+}
+
+/* Start Button */
+#strt {
+  margin-bottom: 20px;
+    position: relative;
+    padding: 15px 35px; /* Larger padding for start button */
+    font-size: 20px; /* Larger font size */
+    color: white;
+    background: #3498db;
+    border: none;
+    border-radius: 30px; /* More rounded */
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.6); /* Initial blue glow */
+}
+
+/* Animated border effect for start button */
+#strt::before {
+    content: "";
+    position: absolute;
+    top: -3px; /* Adjusted for thicker border */
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(
+        90deg,
+        #ff00ff, /* Magenta */
+        #00ffff, /* Cyan */
+        #00ff00, /* Green */
+        #ffff00, /* Yellow */
+        #ff0000, /* Red */
+        #ff00ff /* Magenta */
+    );
+    background-size: 400% 400%;
+    border-radius: 35px; /* Match button curvature */
+    z-index: -1;
+    animation: borderMove 5s linear infinite;
+}
+
+/* Inner solid background for start button */
+#strt::after {
+    content: "";
+    position: absolute;
+    top: 3px; /* Adjusted for thicker border */
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: #3498db; /* Match start button background */
+    border-radius: 27px; /* Slightly less rounded than outer border */
+    z-index: -1;
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+/* Fade In animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
