@@ -1,57 +1,58 @@
 const myImg1 = '<img src="https://i.postimg.cc/pV7Hxggp/Screenshot-2025-08-25-201537.png" width="300px" height="200px"></img><p>Resistance equivalance of the circuit?</p>';
 const myImg = '<img src="https://i.postimg.cc/d3n67j6M/Screenshot-2025-08-23-200845.png width="300px" height="200px"></img><p>Resistance equivalance of the circuit?</p>';
+const myImg2 = '<img src="https://i.postimg.cc/bJKVCJ7c/Transister.webp" width="300px" height="200px"></img><p>From the below image the terminal having arrow is?</p>'
 const questions = [
 
 // Q1
 {
-    q: " What is the capital of France?",
-    options: ["Berlin", "Madrid", "Paris", "Rome"],
-    answer: 2,
-    desc: "Paris is the capital of France, known as the City of Light."
+    q: " What is the first step on the Process of PCB design?",
+    options: ["Circuit Schematic Drawing", "PCB Layout Design", "Drilling holes", "Etching Process"],
+    answer: 0,
+    desc: "Drawing the Schematic of the circuit is the first step on the Process of PCB design"
 },
 //Q2
 {
-    q: " Which planet is called the Red Planet?",
-    options: ["Earth", "Venus", "Mars", "Jupiter"],
-    answer: 2,
-    desc: "Mars is called the Red Planet because of its reddish appearance."
+    q: " Which of the below component is a Active component?",
+    options: ["Resistor", "Piezoelectric", "Transformer", "Inductor"],
+    answer: 1,
+    desc: "Piezoelectrics are an Active component"
 },
 
 //Q3
 {
-    q: " Select A",
-    options: ["a", "A", "c", "B"],
+    q: " Which of the component below store and release electrical energy",
+    options: ["Inductor", "Capacitor", "Resistor", "Inductor & Capacitor"],
     answer: 1,
-    desc: ""
+    desc: "Inductor stores and releases Electrical Energy"
 },
 //Q4
 {
-    q: " Select z",
-    options: ["Z", "z", "x", "y"],
-    answer: 1,
-    desc: ""
+    q: " What is Rectifier used for?",
+    options: [" Convert AC to DC", "convert Higher AC to Lower AC", "converts DC to AC", "convert higher DC to Lower DC"],
+    answer: 0,
+    desc: "Rectifier is Used to convert AC to DC"
 },
 //Q5
 {
-    q: " Select S",
-    options: ["S", "s", "H", "T"],
-    answer: 0,
-    desc: ""
+    q: myImg2,
+    options: ["Base", "Collector", "Emitter", "none"],
+    answer: 2,
+    desc: "The Arrow indicates the Emitter Terminal"
 },
 //Q6
 {
-    q: " Select y",
-    options: ["Y", "g", "i", "y"],
+    q: " An Integrated Circuit(IC) is also known as?",
+    options: ["MicroProcessor", "MiniChip", "Chips", "MicroChip"],
     answer: 3,
-    desc: ""
+    desc: "IC is also known as MicroChip"
 },
 
 //Q7
 {
-    q: " Select c",
-    options: ["a","b","c"],
-    answer: 2,
-    desc: ""
+    q: " Which solution is used for Etching process while PCB designing?",
+    options: ["Nacl","FeCL3","FeCL2","FeSO4"],
+    answer: 1,
+    desc: "FeCL3 is used in the Etching Process"
 },
 
 //Q8
@@ -216,3 +217,4 @@ Qstart.addEventListener("click", () => {
     loadQuestion();
     Qstart.style.display = "none";
 });
+
