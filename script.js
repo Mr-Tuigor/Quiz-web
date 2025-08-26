@@ -42,7 +42,7 @@ const questions = [
 //Q6
 {
     q: " An Integrated Circuit(IC) is also known as?",
-    options: ["MicroProcessor", "MiniChip", "Chips", "MicroChip"],
+    options: ["MicroProcessor", "MiniChip", "processor", "MicroChip"],
     answer: 3,
     desc: "IC is also known as MicroChip"
 },
@@ -217,5 +217,6 @@ Qstart.addEventListener("click", () => {
     loadQuestion();
     Qstart.style.display = "none";
 });
+
 
 
