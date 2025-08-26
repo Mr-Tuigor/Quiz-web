@@ -1,6 +1,6 @@
 const myImg1 = '<img src="https://i.postimg.cc/pV7Hxggp/Screenshot-2025-08-25-201537.png" width="300px" height="200px"></img><p>Resistance equivalance of the circuit?</p>';
 const myImg = '<img src="https://i.postimg.cc/d3n67j6M/Screenshot-2025-08-23-200845.png width="300px" height="200px"></img><p>Resistance equivalance of the circuit?</p>';
-const myImg2 = '<img src="https://i.postimg.cc/bJKVCJ7c/Transister.webp" width="300px" height="200px"></img><p>From the below image the terminal having arrow is?</p>'
+const myImg2 = '<img src="https://i.postimg.cc/bJKVCJ7c/Transister.webp" width="300px" height="200px"></img><p>From the shown image the terminal having arrow is?</p>'
 const questions = [
 
 // Q1
@@ -217,4 +217,5 @@ Qstart.addEventListener("click", () => {
     loadQuestion();
     Qstart.style.display = "none";
 });
+
 
